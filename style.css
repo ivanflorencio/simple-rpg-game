@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 40px);
+    background-color: #2c3845;
+    flex-direction: column;
+    gap: 10px;    
+}
+#container {
+    width: 864px;
+    height: 480px;
+    line-height: 0;
+}
+#container div {
+    outline: solid 1px #fff2;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    background: url('map.png') no-repeat;
+    background-position: 48px 48px;
+}
+#container div:hover {
+    background-color: #232f3c;   
+}
+canvas {    
+    outline: 10px solid #fff5;
+    position: absolute;   
+    pointer-events: none;
+    z-index: 1;
+}
+
+ul#tiles {
+    padding: 0;
+}
+
+ul#tiles li {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    outline: solid 5px #232f3c;
+    background: url('map.png') no-repeat;
+    cursor: pointer;    
+    margin: 5px;
+}
+ul#tiles li:hover {
+    opacity: 0.8;    
+}
+
+ul.heroes {
+    padding: 0;
+}
+ul.heroes li {
+    color: #fff8;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px;
+    list-style: none;
+    display: inline-block;
+    background-color: #324152;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;    
+    text-align: center;
+}
+
+ul.heroes li:hover {
+    color: #fff;
+}
+
+ul.heroes li.active {
+    color: #fff;
+    background-color: #232f3c;
+}
+
+ul.heroes li::after {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-image: url('hero.png');    
+    background-size: 864px;
+    margin: 0 auto;
+    
+}
+ul.heroes li:nth-child(1)::after {
+    background-position: -36px 0px;     
+}
+ul.heroes li:nth-child(2)::after {
+    background-position: -108px 0px;     
+}
+ul.heroes li:nth-child(3)::after {
+    background-position: -216px 0px;     
+}
+ul.heroes li:nth-child(4)::after {
+    background-position: -324px 0px;     
+}
+ul.heroes li:nth-child(5)::after {
+    background-position: -432px 0px;     
+}
+ul.heroes li:nth-child(6)::after {
+    background-position: -540px 0px;     
+}
+ul.heroes li:nth-child(7)::after {
+    background-position: -648px 0px;     
+}
+ul.heroes li:nth-child(8)::after {
+    background-position: -756px 0px;     
+}

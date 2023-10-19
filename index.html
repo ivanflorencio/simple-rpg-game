@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link href="style.css" rel="stylesheet">    
+    <script src="config.js" defer></script>
+    <script type="module" defer>
+        import Game from './game.js';
+        const {selectHero} = Game("game-container");
+        for (let i = 0; i < 8; i++) {
+           let link = document.getElementById(`hero-${i}`);
+           link.addEventListener('click', () => {
+                selectHero(i);
+                document.querySelectorAll('li').forEach(e => e.classList.remove('active'));
+                link.classList.add('active');
+           });
+        }
+   </script>
+</head>
+<body>
+    <ul class="heroes">
+       <li id="hero-0" class="active">Téo</li> 
+       <li id="hero-1">Lara</li> 
+       <li id="hero-2">Scott</li> 
+       <li id="hero-3">Nevinha</li> 
+       <li id="hero-4">Note</li> 
+       <li id="hero-5">Luna</li> 
+       <li id="hero-6">Bolt</li> 
+       <li id="hero-7">Cacau</li> 
+    </ul>
+    <div id="container">
+        <canvas id="game-container"></canvas> 
+    </div>
+    <ul id="tiles"></ul>
+</body>
+</html>
